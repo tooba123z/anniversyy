@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y2K Anniversary Letter</title>
+    <style>
+        /* Body styling */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #FFD1DC; /* Pastel pink background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative; /* Positioning for absolute children */
+        }
+
+        /* Y2K Title styling */
+        h1.y2k-title {
+            font-size: 3em;
+            color: #FF69B4; /* Hot pink */
+            text-align: center;
+            position: absolute; /* Positioned at the top */
+            top: 20px; /* Distance from the top */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust to center */
+            text-shadow: 3px 3px #FFB6C1; /* Light pink shadow for a 3D effect */
+        }
+
+        /* Y2K characters styling */
+        .y2k-character {
+            width: 100px; /* Adjust size as needed */
+            position: absolute; /* Positioning */
+        }
+
+        /* Positioning characters at corners */
+        .y2k-character.left {
+            left: 20px; /* Distance from left */
+            bottom: 20px; /* Distance from bottom */
+        }
+
+        .y2k-character.right {
+            right: 20px; /* Distance from right */
+            bottom: 20px; /* Distance from bottom */
+        }
+
+        .y2k-character.bottom {
+            left: 50%; /* Center horizontally */
+            bottom: 20px; /* Distance from bottom */
+            transform: translateX(-50%); /* Adjust to center */
+        }
+
+        /* Envelope container */
+        .envelope-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 60px; /* Space below title */
+        }
+
+        /* Envelope styling */
+        .envelope {
+            position: relative;
+            display: none; /* Hide initially */
+        }
+
+        /* Heart on the envelope */
+        .heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #FF69B4;
+            font-size: 2em;
+        }
+
+        /* Hidden letter */
+        .letter-content {
+            display: none;
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Animation for smooth transition */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Y2K Title -->
+    <h1 class="y2k-title">Happy Anniversary! 💖</h1>
+
+    <!-- Y2K Characters -->
+    <img src="assets/y2k-character-1.png" alt="Y2K Character 1" class="y2k-character left">
+    <img src="assets/y2k-character-2.png" alt="Y2K Character 2" class="y2k-character right">
+    <img src="assets/y2k-character-3.png" alt="Y2K Character 3" class="y2k-character bottom"> <!-- Adjust the source as needed -->
+
+    <!-- Envelope container -->
+    <div class="envelope-container" id="envelope">
+        <!-- Closed Envelope Image -->
+        <div class="envelope" id="closed-envelope">
+            <img src="assets/envelope-closed.png" alt="Closed Envelope" style="width: 200px;">
+            <div class="heart">💌</div>
+        </div>
+        <!-- Open Envelope Image (hidden initially) -->
+        <div class="envelope" id="open-envelope" style="display: none;">
+            <img src="assets/envelope-open.png" alt="Open Envelope" style="width: 200px;">
+        </div>
+    </div>
+
+    <!-- Hidden letter -->
+    <div class="letter-content" id="letter">
+        <h1>Happy Anniversary, My Love! 💖</h1>
+        <p>Today marks another year of our wonderful journey together. You mean the world to me!</p>
+        <p>I love you with all my heart! Looking forward to many more amazing moments with you. ❤️</p>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="myAudio">
+        <source src="your-audio-file.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Get the elements
+        const closedEnvelope = document.getElementById('closed-envelope');
+        const openEnvelope = document.getElementById('open-envelope');
+        const letter = document.getElementById('letter');
+        const audio = document.getElementById('myAudio');
+
+        // Click event to open the envelope and show the letter
+        closedEnvelope.addEventListener('click', function() {
+            // Hide closed envelope and show open envelope
+            closedEnvelope.style.display = 'none';
+            openEnvelope.style.display = 'block';
+            // Show the letter
+            letter.style.display = 'block';
+            // Play the audio
+            audio.play();
+        });
+    </script>
+
+</body>
+</html>

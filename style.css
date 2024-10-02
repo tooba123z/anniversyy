@@ -1,0 +1,113 @@
+/* Basic resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #FFD1DC; /* Pastel pink background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.envelope-page, .letter-page {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.envelope-page {
+    background-color: #f7dbdbfd;
+    width: 100%;
+    height: 100%;
+}
+
+.y2k-characters {
+    position: absolute;
+    top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.y2k-characters img {
+    width: 120px;
+    height: auto;
+}
+
+.envelope {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart {
+    position: absolute;
+    font-size: 2em;
+    color: red;
+}
+
+.closed-envelope {
+    width: 100%;
+}
+
+.open-envelope {
+    display: none;
+    width: 100%;
+}
+
+.letter-page {
+    display: none;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.letter-content {
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+.letter-content h1 {
+    font-size: 2em;
+    color: #ff69b4;
+}
+
+.letter-content p {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+/* Keyframe animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
